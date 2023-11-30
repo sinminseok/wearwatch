@@ -1,11 +1,21 @@
 
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wearwatch/view/HomeView.dart';
 import 'package:wear/wear.dart';
 
-void main() {
-  runApp(MyApp());
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,13 +35,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   double heartRate = 0.0;
-
+  
   @override
   void initState() {
     super.initState();
-
   }
-  //
+
   Future<void> getHeartRate() async {
     const platform = MethodChannel('com.example.heart_rate_sensor');
     try {
@@ -56,17 +65,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: InkWell(
-            onTap: ()async{
-              await getHeartRate();
-
-            },
-            child: Text(
-              "heartRaddte = $heartRate"
+          body: Center(
+            child: InkWell(
+              onTap: ()async{
+                FirebaseFirestore _firestore = FirebaseFirestore.instance;
+                await _firestore.collection("heart").doc("zmWPiQle7k5duY0NHNSW").set(
+                  {
+                    "brand": "Genesis",
+                    "name": "G70",
+                    "price": 5000,
+                  },);
+              },
+              child: Text(
+                  "heartRaddte = $heartRate"
+              ),
             ),
-          ),
-        )
+          )
       ),
     );
   }

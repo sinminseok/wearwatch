@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "793183406493",
+    "project_id": "wearos-9c509",
+    "storage_bucket": "wearos-9c509.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793183406493:android:23cd70bf4c46254c4a8774",
+        "android_client_info": {
+          "package_name": "com.example.iot_service"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmWo3xaHjeb5TxPjIcvncSsm1A372S_0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793183406493:android:c30fded9b33434764a8774",
+        "android_client_info": {
+          "package_name": "com.example.wearwatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmWo3xaHjeb5TxPjIcvncSsm1A372S_0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

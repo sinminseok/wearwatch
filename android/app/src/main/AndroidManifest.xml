@@ -11,7 +11,9 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
     </application>
+
     <application
+
         android:label="wearwatch"
         android:name="${applicationName}"
         android:extractNativeLibs="true"
